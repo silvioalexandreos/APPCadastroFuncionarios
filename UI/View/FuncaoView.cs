@@ -1,4 +1,5 @@
 ﻿using CadFuncionario.Controller;
+using CadFuncionario.View;
 using System;
 using System.Security.Cryptography;
 using UI.Controller.Funcao;
@@ -16,8 +17,6 @@ namespace CadFuncionario
 
         public void CadFuncao()
         {
-            //CrudFuncaoControler crudFuncionario = new CrudFuncaoControler();
-
 
             Console.WriteLine("####################### Cadastro de Função #######################");
 

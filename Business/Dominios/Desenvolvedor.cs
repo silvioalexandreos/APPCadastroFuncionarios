@@ -11,10 +11,6 @@ namespace UI
         public int NivelId { get; set; }
         public Nivel Nivel { get;  set; }
 
-
-        /// <summary>
-        /// Atribui data atual para DataCadastro e define status como true.
-        /// </summary>
         public Desenvolvedor()
         {
             DataCadastro = DateTime.Now;

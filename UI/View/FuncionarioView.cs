@@ -19,11 +19,7 @@ namespace CadFuncionario.Controller
         {
                 
         }
-        /// <summary>
-        /// Contem componentes de exibição de campos a serem preenchidos 
-        /// e faz a percistência no banco de dados.
-        /// Campo nome, email, nível e quantidade de horas trabalhas.
-        /// </summary>
+
         public void CadFuncionario()
         {
             CrudFuncionarioControler crudFuncionario = new CrudFuncionarioControler();
