@@ -1,8 +1,9 @@
-﻿using CadFuncionario.Controller;
+﻿using CadFuncionario;
+using CadFuncionario.Controller;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace CadFuncionario
+namespace UI
 {
     public class Desenvolvedor : Pessoa
     {
