@@ -45,7 +45,6 @@ namespace CadFuncionario.Controller
                     case 4:
                         Console.Clear();
                         Environment.Exit(0);
-                        
                         break;
                     default:
                         Console.WriteLine("Opção invalida.");

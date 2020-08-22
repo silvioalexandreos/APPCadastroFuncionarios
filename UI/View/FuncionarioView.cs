@@ -40,7 +40,6 @@ namespace CadFuncionario.Controller
             Console.Write("Digite o ID da Função: ");
             int nivelId = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("");
             Console.Write("Quantas horas trabalho no mês: ");
             int qtdHoras = Convert.ToInt32(Console.ReadLine());
 
