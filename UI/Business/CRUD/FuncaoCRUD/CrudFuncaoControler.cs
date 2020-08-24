@@ -9,7 +9,7 @@ namespace UI.Controller.Funcao
 {
     class CrudFuncaoControler
     {
-        Nivel nivel = new Nivel();
+        Level nivel = new Level();
 
         public void SalvarFuncao(string descricao, double vlrHora)
         {
@@ -19,7 +19,7 @@ namespace UI.Controller.Funcao
             nivel.ValidaCampoVlrHoras(vlrHora);
             nivel.VlrHora = vlrHora;
 
-            using (var conexao = new Conexao())
+            using (var conexao = new Connection())
             {
                 conexao.Niveis.Add(nivel);
                 conexao.SaveChanges();

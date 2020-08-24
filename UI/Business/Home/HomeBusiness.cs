@@ -4,9 +4,9 @@ using System.Text;
 
 namespace CadFuncionario.Controller
 {
-    class HomeNegocio
+    class HomeBusiness
     {
-        public HomeNegocio()
+        public HomeBusiness()
         {
 
         }
@@ -20,7 +20,7 @@ namespace CadFuncionario.Controller
         {
             FuncaoView cadastrarController = new FuncaoView();
             FuncionarioView funcionario = new FuncionarioView();
-            RelatorioFuncionarioController listar = new RelatorioFuncionarioController();
+            RelatorioFuncionarioBusiness listar = new RelatorioFuncionarioBusiness();
 
 
             try

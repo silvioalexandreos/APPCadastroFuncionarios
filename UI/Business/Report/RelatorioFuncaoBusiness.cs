@@ -6,14 +6,14 @@ using System.Text;
 
 namespace UI.Controller.Relatorio
 {
-    public class RelatorioFuncaoController
+    public class RelatorioFuncaoBusiness
     {
         public void ExibirFuncoes()
         {
-            using (var conexao = new Conexao())
+            using (var conexao = new Connection())
             {
 
-                IList<Nivel> nivels = conexao.Niveis.ToList();
+                IList<Level> nivels = conexao.Niveis.ToList();
 
                 foreach (var funcoes in nivels)
                 {

@@ -7,7 +7,7 @@ namespace UI.Controller.Funcionario
 {
     class CrudFuncionarioControler
     {
-        Desenvolvedor dev = new Desenvolvedor();
+        Developer dev = new Developer();
 
         public void SalvarFuncionario(string nome, string email, int nivelId, int qtdHoras)
         {
@@ -21,7 +21,7 @@ namespace UI.Controller.Funcionario
             dev.ValidarCamposQtdHoras(qtdHoras);
 
 
-            using (var conexao = new Conexao())
+            using (var conexao = new Connection())
             {
                 conexao.Desenvolvedores.Add(dev);
                 conexao.SaveChanges();

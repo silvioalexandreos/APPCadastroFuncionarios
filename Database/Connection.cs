@@ -3,10 +3,10 @@ using UI;
 
 namespace CadFuncionario
 {
-    public class Conexao : DbContext
+    public class Connection : DbContext
     {
-        public DbSet<Nivel> Niveis { get; set; }
-        public DbSet<Desenvolvedor> Desenvolvedores { get; set; }
+        public DbSet<Level> Niveis { get; set; }
+        public DbSet<Developer> Desenvolvedores { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

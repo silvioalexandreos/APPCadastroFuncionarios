@@ -23,7 +23,7 @@ namespace CadFuncionario.Controller
         public void CadFuncionario()
         {
             CrudFuncionarioControler crudFuncionario = new CrudFuncionarioControler();
-            RelatorioFuncaoController relatorioFuncao = new RelatorioFuncaoController();
+            RelatorioFuncaoBusiness relatorioFuncao = new RelatorioFuncaoBusiness();
 
             Console.Clear();
             Console.WriteLine("####################### Cadastro de Funcionário #######################");

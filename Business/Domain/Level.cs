@@ -2,7 +2,7 @@
 
 namespace CadFuncionario
 {
-    public class Nivel
+    public class Level
     {
 
         public int Id { get; set; }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CadFuncionario.Controller
 {
-    public abstract class Pessoa
+    public abstract class Person
     {
         public Guid Id { get; set; }
         public DateTime DataCadastro { get; set; }

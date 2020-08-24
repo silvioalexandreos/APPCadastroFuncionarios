@@ -5,18 +5,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace UI
 {
-    public class Desenvolvedor : Pessoa
+    public class Developer : Person
     {
         public int HorasTrab { get; set; }
         public int NivelId { get; set; }
-        public Nivel Nivel { get;  set; }
+        public Level Nivel { get;  set; }
 
-        public Desenvolvedor()
+        public Developer()
         {
             DataCadastro = DateTime.Now;
             Status = true;
         }
-        public Desenvolvedor(DateTime dateTime, string nome, string email, int horasTrab, int nivelId)
+        public Developer(DateTime dateTime, string nome, string email, int horasTrab, int nivelId)
         {
             DataCadastro = dateTime;
             Status = true;

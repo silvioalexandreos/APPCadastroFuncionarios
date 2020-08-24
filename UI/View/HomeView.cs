@@ -26,7 +26,7 @@ namespace CadFuncionario.View
 
                 Console.Write("Qual a opção desejada: ");
 
-                HomeNegocio homeController = new HomeNegocio();
+                HomeBusiness homeController = new HomeBusiness();
                 homeController.MenuSelecao();
 
             } while (true);
