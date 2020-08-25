@@ -31,7 +31,7 @@ namespace Business
                 {
                     IList<Level> nivels = (IList<Level>)conexao.Niveis.ToList();
 
-                    double salario = (desen.HorasTrab * desen.Nivel.VlrHora);
+                    var salario = (desen.HorasTrab * desen.Nivel.VlrHora);
                     Console.WriteLine($"Status:{desen.Status}, Data Cadastro: {desen.DataCadastro}, Nome: {desen.Nome}, Email: {desen.Email}, Nivel: {desen.Nivel.Descricao}, Salario:  {salario}");
                 }
                 Console.WriteLine("Pressione qualquer tecla para voltar ao menu incial.");

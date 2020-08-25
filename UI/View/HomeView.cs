@@ -8,10 +8,6 @@ namespace CadFuncionario.View
 {
     static class HomeView
     {
-        /// <summary>
-        /// Lista todas as opções do Menu.
-        /// Só é permitido campo inteiro para realizar as escolha das opções.
-        /// </summary>
         public static void Menu()
         {
             do

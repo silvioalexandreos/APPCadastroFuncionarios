@@ -1,6 +1,7 @@
 ﻿using Business;
 using CadFuncionario.Controller;
 using System;
+using UI;
 
 namespace CadFuncionario.UI
 {
@@ -10,12 +11,7 @@ namespace CadFuncionario.UI
         {
 
         }
-        /// <summary>
-        /// Opção 1: Cadastro de Função,  
-        /// Opção 2: Cadastro de funcionário,
-        /// Opção  3: listar todos os cadastros selecionados.
-        /// </summary>
-        /// 
+
         public void MenuSelecao()
         {
             FuncaoView cadastrarController = new FuncaoView();
@@ -25,8 +21,7 @@ namespace CadFuncionario.UI
 
             try
             {
-                int selecao;
-                selecao = Convert.ToInt32(Console.ReadLine());
+                var selecao = Convert.ToInt32(Console.ReadLine());
 
                 switch (selecao)
                 {
