@@ -1,9 +1,8 @@
 ﻿using CadFuncionario;
-using CadFuncionario.Controller;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace UI
+namespace Database
 {
     public class Developer : Person
     {

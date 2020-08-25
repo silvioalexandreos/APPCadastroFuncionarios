@@ -1,5 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using UI;
+﻿using Database;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace CadFuncionario
 {

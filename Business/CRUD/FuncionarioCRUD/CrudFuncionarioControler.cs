@@ -1,11 +1,12 @@
 ﻿using CadFuncionario;
+using Database;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace UI.Controller.Funcionario
+namespace Business.CRUD.FuncionarioCRUD
 {
-    class CrudFuncionarioControler
+    public class CrudFuncionarioControler
     {
         Developer dev = new Developer();
 

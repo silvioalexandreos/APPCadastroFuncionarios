@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CadFuncionario.Controller
+namespace Database
 {
     public abstract class Person
     {

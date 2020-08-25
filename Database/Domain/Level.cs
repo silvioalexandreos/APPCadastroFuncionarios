@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CadFuncionario
+namespace Database
 {
     public class Level
     {
@@ -8,6 +8,7 @@ namespace CadFuncionario
         public int Id { get; set; }
         public string Descricao { get; set; }
         public double VlrHora { get;  set; }
+
 
         public string ValidaCampoDescricao(string descricao)
         {

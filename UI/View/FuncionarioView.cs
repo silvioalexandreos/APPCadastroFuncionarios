@@ -1,12 +1,12 @@
 ﻿
+using Business;
+using Business.CRUD.FuncionarioCRUD;
 using CadFuncionario.View;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
-using UI.Controller.Funcionario;
-using UI.Controller.Relatorio;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace CadFuncionario.Controller

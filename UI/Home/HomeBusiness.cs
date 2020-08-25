@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Business;
+using CadFuncionario.Controller;
+using System;
 
-namespace CadFuncionario.Controller
+namespace CadFuncionario.UI
 {
-    class HomeBusiness
+    public class HomeBusiness
     {
         public HomeBusiness()
         {
@@ -20,7 +20,7 @@ namespace CadFuncionario.Controller
         {
             FuncaoView cadastrarController = new FuncaoView();
             FuncionarioView funcionario = new FuncionarioView();
-            RelatorioFuncionarioBusiness listar = new RelatorioFuncionarioBusiness();
+            RelatorioFuncionarioBusiness relatorioFuncionario = new RelatorioFuncionarioBusiness();
 
 
             try
@@ -40,7 +40,7 @@ namespace CadFuncionario.Controller
                         break;
                     case 3:
                         Console.Clear();
-                        listar.Exibir();
+                        relatorioFuncionario.Exibir();
                         break;
                     case 4:
                         Console.Clear();
