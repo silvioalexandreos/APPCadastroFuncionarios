@@ -1,19 +1,20 @@
 ﻿using CadFuncionario;
+using Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace UI.Controller.Relatorio
+namespace Business
 {
-    public class RelatorioFuncaoController
+    public class RelatorioFuncaoBusiness
     {
         public void ExibirFuncoes()
         {
-            using (var conexao = new Conexao())
+            using (var conexao = new Connection())
             {
 
-                IList<Nivel> nivels = conexao.Niveis.ToList();
+                IList<Level> nivels = (IList<Level>)conexao.Niveis.ToList();
 
                 foreach (var funcoes in nivels)
                 {

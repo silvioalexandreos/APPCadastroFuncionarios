@@ -1,26 +1,21 @@
 ﻿using CadFuncionario;
-using CadFuncionario.Controller;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace UI
+namespace Database
 {
-    public class Desenvolvedor : Pessoa
+    public class Developer : Person
     {
         public int HorasTrab { get; set; }
         public int NivelId { get; set; }
-        public Nivel Nivel { get;  set; }
+        public Level Nivel { get;  set; }
 
-
-        /// <summary>
-        /// Atribui data atual para DataCadastro e define status como true.
-        /// </summary>
-        public Desenvolvedor()
+        public Developer()
         {
             DataCadastro = DateTime.Now;
             Status = true;
         }
-        public Desenvolvedor(DateTime dateTime, string nome, string email, int horasTrab, int nivelId)
+        public Developer(DateTime dateTime, string nome, string email, int horasTrab, int nivelId)
         {
             DataCadastro = dateTime;
             Status = true;

@@ -1,12 +1,12 @@
 ﻿
+using Business;
+using Business.CRUD.FuncionarioCRUD;
 using CadFuncionario.View;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
-using UI.Controller.Funcionario;
-using UI.Controller.Relatorio;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace CadFuncionario.Controller
@@ -19,15 +19,11 @@ namespace CadFuncionario.Controller
         {
                 
         }
-        /// <summary>
-        /// Contem componentes de exibição de campos a serem preenchidos 
-        /// e faz a percistência no banco de dados.
-        /// Campo nome, email, nível e quantidade de horas trabalhas.
-        /// </summary>
+
         public void CadFuncionario()
         {
             CrudFuncionarioControler crudFuncionario = new CrudFuncionarioControler();
-            RelatorioFuncaoController relatorioFuncao = new RelatorioFuncaoController();
+            RelatorioFuncaoBusiness relatorioFuncao = new RelatorioFuncaoBusiness();
 
             Console.Clear();
             Console.WriteLine("####################### Cadastro de Funcionário #######################");
@@ -44,7 +40,6 @@ namespace CadFuncionario.Controller
             Console.Write("Digite o ID da Função: ");
             int nivelId = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("");
             Console.Write("Quantas horas trabalho no mês: ");
             int qtdHoras = Convert.ToInt32(Console.ReadLine());
 
