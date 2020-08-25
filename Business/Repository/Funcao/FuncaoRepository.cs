@@ -1,18 +1,17 @@
 ﻿using CadFuncionario;
 using Database;
 using System;
+using Business;
 
 
-namespace Business.CRUD.FuncionarioCRUD
+namespace Business.Repository
 {
-    public class CrudFuncaoControler
+    public class FuncaoRepository
     {
         Level level = new Level();
 
         public void SalvarFuncao(string descricao, double vlrHora)
         {
-            
-
             level.Descricao = descricao;
             level.ValidaCampoDescricao(descricao);
 
