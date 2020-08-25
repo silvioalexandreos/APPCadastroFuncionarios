@@ -1,15 +1,17 @@
-﻿using CadFuncionario.Controller;
-using CadFuncionario.View;
-using System;
+﻿using System;
 using System.Security.Cryptography;
+using Business.Repository;
 using Database;
-using Business.CRUD.FuncionarioCRUD;
 
-namespace CadFuncionario.UI
+
+namespace UI
 {
     public class FuncaoView
     {
-        CrudFuncaoControler crudFuncao = new CrudFuncaoControler(); 
+
+        FuncaoRepository funcaoRepository = new FuncaoRepository();
+
+
         public FuncaoView()
         {
                 
@@ -17,16 +19,15 @@ namespace CadFuncionario.UI
 
         public void CadFuncao()
         {
-
             Console.WriteLine("####################### Cadastro de Função #######################");
 
             Console.Write("Descrição: ");
-            string descricao = Console.ReadLine();
+            var descricao = Console.ReadLine();
 
             Console.Write("Valor hora: ");
-            double vlrHora = Convert.ToDouble(Console.ReadLine());
-           
-            crudFuncao.SalvarFuncao(descricao, vlrHora);
+            var vlrHora = Convert.ToDouble(Console.ReadLine());
+
+            funcaoRepository.SalvarFuncao(descricao, vlrHora);
 
         }
     }
