@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CadFuncionario.Controller
+namespace Database
 {
-    public abstract class Pessoa
+    public abstract class Person
     {
         public Guid Id { get; set; }
         public DateTime DataCadastro { get; set; }

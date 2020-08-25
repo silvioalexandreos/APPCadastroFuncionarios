@@ -1,18 +1,19 @@
-﻿using System;
+﻿using CadFuncionario;
+using Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using UI;
 
-namespace CadFuncionario.Controller
+
+namespace Business
 {
-    class RelatorioFuncionarioController
+    public class RelatorioFuncionarioBusiness
     {
         /// <summary>
         /// Exibe todos os registros contidos na tabela de desenvolvedores.
         /// Faz a multiplicação da quantidade de horas trabalhas vezes o valor da hora para o respectivo nível do desenvolvedor.
         /// </summary>
-        public RelatorioFuncionarioController()
+        public RelatorioFuncionarioBusiness()
         {
                 
         }
@@ -20,15 +21,15 @@ namespace CadFuncionario.Controller
         
         public void Exibir()
         {
-            using (var conexao = new Conexao())
+            using (var conexao = new Connection())
             {
                 
                 Console.Clear();
 
-                IList<Desenvolvedor> desenvolvedores = conexao.Desenvolvedores.ToList();
+                IList<Developer> desenvolvedores = (IList<Developer>)conexao.Desenvolvedores.ToList();
                 foreach (var desen in desenvolvedores)
                 {
-                    IList<Nivel> nivels = conexao.Niveis.ToList();
+                    IList<Level> nivels = (IList<Level>)conexao.Niveis.ToList();
 
                     double salario = (desen.HorasTrab * desen.Nivel.VlrHora);
                     Console.WriteLine($"Status:{desen.Status}, Data Cadastro: {desen.DataCadastro}, Nome: {desen.Nome}, Email: {desen.Email}, Nivel: {desen.Nivel.Descricao}, Salario:  {salario}");
