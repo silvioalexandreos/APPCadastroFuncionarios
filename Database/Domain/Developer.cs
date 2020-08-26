@@ -1,4 +1,5 @@
 ﻿using CadFuncionario;
+using Database.Domain.Enum;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -7,22 +8,21 @@ namespace Database
     public class Developer : Person
     {
         public int HorasTrab { get; set; }
-        public int NivelId { get; set; }
-        public Level Nivel { get;  set; }
+        public Level level { get; set; }
 
         public Developer()
         {
             DataCadastro = DateTime.Now;
             Status = true;
         }
-        public Developer(DateTime dateTime, string nome, string email, int horasTrab, int nivelId)
+        public Developer(DateTime dateTime, string nome, string email, int horasTrab, Level level)
         {
             DataCadastro = dateTime;
             Status = true;
             Nome = nome;
             Email = email;
             HorasTrab = horasTrab;
-            NivelId = nivelId;
+            this.level = level;
         }
      
 

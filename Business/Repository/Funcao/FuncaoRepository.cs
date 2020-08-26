@@ -2,21 +2,21 @@
 using Database;
 using System;
 using Business;
-
+using Database.Domain.Enum;
 
 namespace Business.Repository
 {
     public class FuncaoRepository
     {
         Level level = new Level();
+        LevelEnum levelEnum = new LevelEnum();
 
-        public void SalvarFuncao(string descricao, double vlrHora)
+        public void SalvarFuncao(LevelEnum levelEnum, double vlrHora)
         {
-            level.Descricao = descricao;
-            level.ValidaCampoDescricao(descricao);
 
-            level.ValidaCampoVlrHoras(vlrHora);
+            level.Descricao = levelEnum;
             level.VlrHora = vlrHora;
+
 
             using (var conexao = new Connection())
             {

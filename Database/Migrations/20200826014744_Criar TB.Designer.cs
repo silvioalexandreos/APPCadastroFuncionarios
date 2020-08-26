@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Database.Migrations
 {
     [DbContext(typeof(Connection))]
-    [Migration("20200817150013_Criar Tabelas")]
-    partial class CriarTabelas
+    [Migration("20200826014744_Criar TB")]
+    partial class CriarTB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace Database.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("CadFuncionario.Desenvolvedor", b =>
+            modelBuilder.Entity("Database.Developer", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -36,31 +36,31 @@ namespace Database.Migrations
                     b.Property<int>("HorasTrab")
                         .HasColumnType("int");
 
-                    b.Property<int>("NivelId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("levelId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("NivelId");
+                    b.HasIndex("levelId");
 
                     b.ToTable("Desenvolvedores");
                 });
 
-            modelBuilder.Entity("CadFuncionario.Nivel", b =>
+            modelBuilder.Entity("Database.Level", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Descricao")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Descricao")
+                        .HasColumnType("int");
 
                     b.Property<double>("VlrHora")
                         .HasColumnType("float");
@@ -70,13 +70,11 @@ namespace Database.Migrations
                     b.ToTable("Niveis");
                 });
 
-            modelBuilder.Entity("CadFuncionario.Desenvolvedor", b =>
+            modelBuilder.Entity("Database.Developer", b =>
                 {
-                    b.HasOne("CadFuncionario.Nivel", "Nivel")
+                    b.HasOne("Database.Level", "level")
                         .WithMany()
-                        .HasForeignKey("NivelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("levelId");
                 });
 #pragma warning restore 612, 618
         }

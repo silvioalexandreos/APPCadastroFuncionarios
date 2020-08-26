@@ -1,5 +1,6 @@
 ﻿using CadFuncionario;
 using Database;
+using Database.Domain.Enum;
 using System;
 
 namespace Business.CRUD.FuncionarioCRUD
@@ -7,15 +8,19 @@ namespace Business.CRUD.FuncionarioCRUD
     public class FuncionarioRepository
     {
         Developer dev = new Developer();
+        Level level = new Level();
 
-        public void SalvarFuncionario(string nome, string email, int nivelId, int qtdHoras)
+        public void SalvarFuncionario(string nome, string email, Level levelT, int qtdHoras)
         {
+            
             dev.Nome = nome;
             dev.ValidaCampoNome(nome);
+
             dev.Email = email;
             dev.ValidarCampoEmail(email);
-            dev.NivelId = nivelId;
-            dev.ValidarCampoNivel(nivelId);
+
+            dev.level = levelT;
+
             dev.HorasTrab = qtdHoras;
             dev.ValidarCamposQtdHoras(qtdHoras);
 
@@ -28,6 +33,11 @@ namespace Business.CRUD.FuncionarioCRUD
                 Console.WriteLine("Pressione qualquer tecla para voltar ao menu incial.");
                 Console.ReadLine();
             }
+        }
+
+        public void SalvarFuncionario()
+        {
+            throw new NotImplementedException();
         }
     }
 }

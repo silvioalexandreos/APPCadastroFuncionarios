@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Database.Migrations
 {
-    public partial class CriarTabelas : Migration
+    public partial class CriarTB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,7 @@ namespace Database.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Descricao = table.Column<string>(nullable: true),
+                    Descricao = table.Column<int>(nullable: false),
                     VlrHora = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
@@ -31,23 +31,23 @@ namespace Database.Migrations
                     Nome = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     HorasTrab = table.Column<int>(nullable: false),
-                    NivelId = table.Column<int>(nullable: false)
+                    levelId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Desenvolvedores", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Desenvolvedores_Niveis_NivelId",
-                        column: x => x.NivelId,
+                        name: "FK_Desenvolvedores_Niveis_levelId",
+                        column: x => x.levelId,
                         principalTable: "Niveis",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Desenvolvedores_NivelId",
+                name: "IX_Desenvolvedores_levelId",
                 table: "Desenvolvedores",
-                column: "NivelId");
+                column: "levelId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
