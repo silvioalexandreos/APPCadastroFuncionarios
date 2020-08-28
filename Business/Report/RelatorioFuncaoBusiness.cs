@@ -9,19 +9,19 @@ namespace Business
 {
     public class RelatorioFuncaoBusiness
     {
-        public void ExibirFuncoes()
-        {
-            using (var conexao = new Connection())
-            {
+        //public void ExibirFuncoes()
+        //{
+        //    using (var conexao = new Connection())
+        //    {
 
-                IList<Level> nivels = (IList<Level>)conexao.Niveis.ToList();
+        //        IList<Level> level = (IList<Level>)conexao.Niveis.ToList();
 
-                foreach (var funcoes in nivels)
-                {
-                    Console.WriteLine($"ID: {funcoes.Id}, Função: { funcoes.Descricao}, Valor hora: R$ {funcoes.VlrHora}");
+        //        foreach (var funcoes in level)
+        //        {
+        //            Console.WriteLine($"ID: {funcoes.Id}, Função: { funcoes.Descricao}, Valor hora: R$ {funcoes.VlrHora}");
                     
-                }
-            }           
-        }
+        //        }
+        //    }           
+        //}
     }
 }

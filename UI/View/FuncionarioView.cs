@@ -2,6 +2,7 @@
 using Business;
 using Business.CRUD.FuncionarioCRUD;
 using CadFuncionario.View;
+using Database.Domain.Enum;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
@@ -23,7 +24,7 @@ namespace CadFuncionario.Controller
         public void CadFuncionario()
         {
             FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
-            RelatorioFuncaoBusiness relatorioFuncao = new RelatorioFuncaoBusiness();
+            
 
             Console.Clear();
             Console.WriteLine("####################### Cadastro de Funcionário #######################");
@@ -34,16 +35,17 @@ namespace CadFuncionario.Controller
             Console.Write("Email: ");
             var email = Console.ReadLine();
 
-            Console.WriteLine("Opções de Função:");
-            relatorioFuncao.ExibirFuncoes();
-            Console.WriteLine("");
+            Console.WriteLine(" 1 - Junior | 2 - Pleno | 3 - Sênior ");
             Console.Write("Digite o ID da Função: ");
-            var nivelId = Convert.ToInt32(Console.ReadLine());
+
+            string level = Console.ReadLine();
+
+            int temp = int.Parse(level);
 
             Console.Write("Quantas horas trabalho no mês: ");
             var qtdHoras = Convert.ToInt32(Console.ReadLine());
 
-            funcionarioRepository.SalvarFuncionario(nome, email, nivelId, qtdHoras);
+            funcionarioRepository.SalvarFuncionario(nome, email, temp, qtdHoras);
         }
     }
 }
