@@ -1,10 +1,10 @@
 ﻿
 namespace Database.Domain.Enum
 {
-    public enum LevelEnum
+    public enum LevelEnum : int
     {
         Junior = 1,
-        Pleno,
-        Senior
+        Pleno = 2,
+        Senior = 3
     }
 }

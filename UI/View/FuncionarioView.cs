@@ -24,8 +24,7 @@ namespace CadFuncionario.Controller
         public void CadFuncionario()
         {
             FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
-
-            //LevelEnum levelEnum = new LevelEnum();
+            
 
             Console.Clear();
             Console.WriteLine("####################### Cadastro de Funcionário #######################");
@@ -39,31 +38,14 @@ namespace CadFuncionario.Controller
             Console.WriteLine(" 1 - Junior | 2 - Pleno | 3 - Sênior ");
             Console.Write("Digite o ID da Função: ");
 
-            int level = Convert.ToInt32(Console.ReadLine());
+            string level = Console.ReadLine();
 
-            switch (level)
-            {
-                case 1:
-                    level = (int)LevelEnum.Junior;
-                    break;
-                case 2:
-                    level = (int)LevelEnum.Pleno;
-                    break;
-                case 3:
-                    level = (int)LevelEnum.Senior;
-                    break;
-                default:
-                    throw new Exception("Valor digitado é inválido.");
-            }
-
-            LevelEnum level1 = (int)level;
-
-
+            int temp = int.Parse(level);
 
             Console.Write("Quantas horas trabalho no mês: ");
             var qtdHoras = Convert.ToInt32(Console.ReadLine());
 
-            funcionarioRepository.SalvarFuncionario(nome, email, level1, qtdHoras);
+            funcionarioRepository.SalvarFuncionario(nome, email, temp, qtdHoras);
         }
     }
 }

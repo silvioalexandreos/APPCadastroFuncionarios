@@ -1,4 +1,4 @@
-﻿using CadFuncionario;
+using CadFuncionario;
 using Database;
 using Database.Domain.Enum;
 using System;
@@ -8,21 +8,25 @@ namespace Business.CRUD.FuncionarioCRUD
     public class FuncionarioRepository
     {
         Developer dev = new Developer();
-        Level level = new Level();
 
-        public void SalvarFuncionario(string nome, string email, Level levelT, int qtdHoras)
+        public void SalvarFuncionario(string nome, string email, int level, int qtdHoras)
         {
-            
-            dev.Nome = nome;
+
             dev.ValidaCampoNome(nome);
+            dev.Nome = nome;
+            
 
-            dev.Email = email;
             dev.ValidarCampoEmail(email);
+            dev.Email = email;
 
-            dev.level = levelT;
 
-            dev.HorasTrab = qtdHoras;
+            dev.ValidarCampoNivel(level);
+            dev.LevelEnum = (LevelEnum)level;
+            
+
             dev.ValidarCamposQtdHoras(qtdHoras);
+            dev.HorasTrab = qtdHoras;
+            
 
 
             using (var conexao = new Connection())
@@ -40,4 +44,4 @@ namespace Business.CRUD.FuncionarioCRUD
             throw new NotImplementedException();
         }
     }
-}
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        

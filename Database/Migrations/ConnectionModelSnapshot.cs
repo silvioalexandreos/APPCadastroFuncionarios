@@ -34,18 +34,16 @@ namespace Database.Migrations
                     b.Property<int>("HorasTrab")
                         .HasColumnType("int");
 
+                    b.Property<int>("LevelEnum")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("levelId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("levelId");
 
                     b.ToTable("Desenvolvedores");
                 });
@@ -66,13 +64,6 @@ namespace Database.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Niveis");
-                });
-
-            modelBuilder.Entity("Database.Developer", b =>
-                {
-                    b.HasOne("Database.Level", "level")
-                        .WithMany()
-                        .HasForeignKey("levelId");
                 });
 #pragma warning restore 612, 618
         }
