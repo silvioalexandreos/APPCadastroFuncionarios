@@ -14,7 +14,7 @@ namespace CadFuncionario.UI
 
         public void MenuSelecao()
         {
-            FuncaoView cadastrarController = new FuncaoView();
+            FuncaoView funcao = new FuncaoView();
             FuncionarioView funcionario = new FuncionarioView();
             RelatorioFuncionarioBusiness relatorioFuncionario = new RelatorioFuncionarioBusiness();
 
@@ -27,7 +27,7 @@ namespace CadFuncionario.UI
                 {
                     case 1:
                         Console.Clear();
-                        cadastrarController.CadFuncao();
+                        funcao.CadFuncao();
                         break;
                     case 2:
                         Console.Clear();

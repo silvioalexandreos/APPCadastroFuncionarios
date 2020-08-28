@@ -4,14 +4,16 @@ using CadFuncionario;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Database.Migrations
 {
     [DbContext(typeof(Connection))]
-    partial class ConexaoModelSnapshot : ModelSnapshot
+    [Migration("20200827205838_Criar TBs")]
+    partial class CriarTBs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -19,7 +21,7 @@ namespace Database.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("CadFuncionario.Desenvolvedor", b =>
+            modelBuilder.Entity("Database.Developer", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -34,7 +36,7 @@ namespace Database.Migrations
                     b.Property<int>("HorasTrab")
                         .HasColumnType("int");
 
-                    b.Property<int>("NivelId")
+                    b.Property<int>("LevelEnum")
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
@@ -45,20 +47,18 @@ namespace Database.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("NivelId");
-
                     b.ToTable("Desenvolvedores");
                 });
 
-            modelBuilder.Entity("CadFuncionario.Nivel", b =>
+            modelBuilder.Entity("Database.Level", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Descricao")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Descricao")
+                        .HasColumnType("int");
 
                     b.Property<double>("VlrHora")
                         .HasColumnType("float");
@@ -66,15 +66,6 @@ namespace Database.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Niveis");
-                });
-
-            modelBuilder.Entity("CadFuncionario.Desenvolvedor", b =>
-                {
-                    b.HasOne("CadFuncionario.Nivel", "Nivel")
-                        .WithMany()
-                        .HasForeignKey("NivelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

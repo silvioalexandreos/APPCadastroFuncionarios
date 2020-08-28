@@ -1,4 +1,5 @@
 ﻿using CadFuncionario;
+using Database.Domain.Enum;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -7,22 +8,25 @@ namespace Database
     public class Developer : Person
     {
         public int HorasTrab { get; set; }
-        public int NivelId { get; set; }
-        public Level Nivel { get;  set; }
+        public LevelEnum LevelEnum { get; set; }
+        //public Level Level { get; set; }
 
         public Developer()
         {
             DataCadastro = DateTime.Now;
             Status = true;
         }
-        public Developer(DateTime dateTime, string nome, string email, int horasTrab, int nivelId)
+        public Developer(DateTime dateTime, string nome, string email, int horasTrab, int levelEnum)
         {
+            var levelTemp = new Level();
+
             DataCadastro = dateTime;
             Status = true;
             Nome = nome;
             Email = email;
             HorasTrab = horasTrab;
-            NivelId = nivelId;
+            levelTemp.Descricao = (LevelEnum)levelEnum;
+            
         }
      
 
@@ -35,7 +39,7 @@ namespace Database
 
         public int ValidarCampoNivel(int nivel)
         {
-            if (nivel < 0) throw new Exception("Digite um nível valido.");
+            if (nivel < 1 && nivel > 3) throw new Exception("Digite um nível valido.");
 
             return nivel;
         }

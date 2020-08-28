@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Database.Domain.Enum;
+using System;
 
 namespace Database
 {
@@ -6,16 +7,17 @@ namespace Database
     {
 
         public int Id { get; set; }
-        public string Descricao { get; set; }
+        public LevelEnum Descricao { get; set; }
         public double VlrHora { get;  set; }
 
 
-        public string ValidaCampoDescricao(string descricao)
-        {
-            if (string.IsNullOrEmpty(descricao)) throw new Exception("Preencha o campo descrição corretamente.");
 
-            return descricao;
-        }
+        //public string ValidaCampoDescricao(LevelEnum descricao)
+        //{
+        //    if (string.IsNullOrEmpty(descricao)) throw new Exception("Preencha o campo descrição corretamente.");
+
+        //    return descricao;
+        //}
 
         public double ValidaCampoVlrHoras(double vlrHora)
         {
