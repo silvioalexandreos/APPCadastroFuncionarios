@@ -1,7 +1,8 @@
-﻿using CadFuncionario;
+using CadFuncionario;
 using Database;
 using Database.Domain.Enum;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,37 +23,26 @@ namespace Business
 
                 using (var conexao = new Connection())
                 {
-
-
                     Console.Clear();
 
-
-
-                    IList<Developer> desenvolvedores = (IList<Developer>)conexao.Desenvolvedores.ToList();
+                IList<Developer> desenvolvedores = (IList<Developer>)conexao.Desenvolvedores.ToList();
                     foreach (var desen in desenvolvedores)
                     {
-                        var vlrHoras = (from sl in conexao.Niveis
-                                       join s in conexao.Desenvolvedores 
-                                       on sl.Descricao equals s.LevelEnum
-                                       where  s.LevelEnum == sl.Descricao 
-                                       select sl).First(); 
-
-                        Level levelSql = new Level();
-                        Developer developerSql = new Developer();
-                        IList<Level> level = (IList<Level>)conexao.Niveis.ToList();
-
+                    var vlrHoras = (from sl in conexao.Niveis
+                                    join s in conexao.Desenvolvedores
+                                    on sl.Descricao equals s.LevelEnum
+                                    where s.LevelEnum == sl.Descricao
+                                    select sl).FirstOrDefault();
 
                         var salario = (desen.HorasTrab * vlrHoras.VlrHora);
                         Console.WriteLine($"Status:{desen.Status}, Data Cadastro: " +
                             $"{desen.DataCadastro}, Nome: {desen.Nome}, Email: " +
                             $"{desen.Email}, Nível: {desen.LevelEnum}, Salario: {salario}");
                     }
-
-
                     Console.WriteLine("Pressione qualquer tecla para voltar ao menu incial.");
                     Console.ReadLine();
                 }
             }
         }
     }
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

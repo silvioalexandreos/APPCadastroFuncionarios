@@ -8,11 +8,9 @@ namespace Business.Repository
 {
     public class FuncaoRepository
     {
-        Level level = new Level();
-        LevelEnum levelEnum = new LevelEnum();
-
         public void SalvarFuncao(LevelEnum levelEnum, double vlrHora)
         {
+            var level = new Level();
 
             level.Descricao = levelEnum;
             level.VlrHora = vlrHora;
