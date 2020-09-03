@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Database.Migrations
 {
-    public partial class CriarTBs : Migration
+    public partial class CriarTB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,7 +17,7 @@ namespace Database.Migrations
                     Nome = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     HorasTrab = table.Column<int>(nullable: false),
-                    LevelEnum = table.Column<int>(nullable: false)
+                    LevelID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
