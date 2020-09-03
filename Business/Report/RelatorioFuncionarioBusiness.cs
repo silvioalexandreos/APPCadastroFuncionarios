@@ -19,12 +19,21 @@ namespace Business
 
                 foreach (var desen in desenvolvedores)
                 {
-                    var salario = (desen.HorasTrab * desen.Level.VlrHora);
 
-                    Console.WriteLine($"Status:{desen.Status}, Data Cadastro: " +
+                    var nivelDesenvolvedor = niveis.FirstOrDefault(x => x.Id == desen.LevelID);
+
+                    if (nivelDesenvolvedor != null)
+                    {
+                        var horaDesenvolvedor = nivelDesenvolvedor.VlrHora;
+
+                        var salario = (desen.HorasTrab * horaDesenvolvedor);
+
+                        Console.WriteLine($"Status:{desen.Status}, Data Cadastro: " +
                         $"{desen.DataCadastro}, Nome: {desen.Nome}, Email: " +
-                        $"{desen.Email}, Nível: {desen.LevelEnum}, Salario: {salario}");                   
-                }
+                        $"{desen.Email}, Nível: {nivelDesenvolvedor.Descricao}, Salario: {salario}");
+
+                    }
+                } 
 
                 Console.WriteLine("Pressione qualquer tecla para voltar ao menu incial.");
                 Console.ReadLine();
