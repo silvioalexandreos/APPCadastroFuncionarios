@@ -9,24 +9,26 @@ namespace Database
     {
         public int HorasTrab { get; set; }
         public LevelEnum LevelEnum { get; set; }
-        //public Level Level { get; set; }
+        public Level Level { get; set; }
+        public int LevelID { get; set; }
+        
 
         public Developer()
         {
             DataCadastro = DateTime.Now;
             Status = true;
         }
-        public Developer(DateTime dateTime, string nome, string email, int horasTrab, int levelEnum)
+        public Developer(DateTime dateTime, string nome, string email, int horasTrab, int levelEnum, int level)
         {
-            var levelTemp = new Level();
 
+            var levelTemp = new Level();
             DataCadastro = dateTime;
             Status = true;
             Nome = nome;
             Email = email;
             HorasTrab = horasTrab;
             levelTemp.Descricao = (LevelEnum)levelEnum;
-            
+            LevelID = level;
         }
      
 
