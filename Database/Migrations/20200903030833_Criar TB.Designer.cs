@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Database.Migrations
 {
     [DbContext(typeof(Connection))]
-    [Migration("20200827205838_Criar TBs")]
-    partial class CriarTBs
+    [Migration("20200903030833_Criar TB")]
+    partial class CriarTB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,7 +36,7 @@ namespace Database.Migrations
                     b.Property<int>("HorasTrab")
                         .HasColumnType("int");
 
-                    b.Property<int>("LevelEnum")
+                    b.Property<int>("LevelID")
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")

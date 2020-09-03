@@ -8,8 +8,6 @@ namespace Database
     public class Developer : Person
     {
         public int HorasTrab { get; set; }
-        public LevelEnum LevelEnum { get; set; }
-        public Level Level { get; set; }
         public int LevelID { get; set; }
         
 
@@ -18,17 +16,16 @@ namespace Database
             DataCadastro = DateTime.Now;
             Status = true;
         }
-        public Developer(DateTime dateTime, string nome, string email, int horasTrab, int levelEnum, int level)
+        public Developer(DateTime dateTime, string nome, string email, int horasTrab, int levelEnum)
         {
+            var level = new Level();
 
-            var levelTemp = new Level();
             DataCadastro = dateTime;
             Status = true;
             Nome = nome;
             Email = email;
             HorasTrab = horasTrab;
-            levelTemp.Descricao = (LevelEnum)levelEnum;
-            LevelID = level;
+            LevelID = level.Id;
         }
      
 
