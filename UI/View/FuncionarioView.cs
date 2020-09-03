@@ -38,14 +38,15 @@ namespace CadFuncionario.Controller
             Console.WriteLine(" 1 - Junior | 2 - Pleno | 3 - Sênior ");
             Console.Write("Digite o ID da Função: ");
 
-            string level = Console.ReadLine();
+            string levelTemp = Console.ReadLine();
 
-            int temp = int.Parse(level);
+            int levelEnum = int.Parse(levelTemp);
+            int level = int.Parse(levelTemp);
 
             Console.Write("Quantas horas trabalho no mês: ");
             var qtdHoras = Convert.ToInt32(Console.ReadLine());
 
-            funcionarioRepository.SalvarFuncionario(nome, email, temp, qtdHoras);
+            funcionarioRepository.SalvarFuncionario(nome, email, levelEnum, qtdHoras, level);
         }
     }
 }
